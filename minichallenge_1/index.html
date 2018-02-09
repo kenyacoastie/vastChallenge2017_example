@@ -67,11 +67,14 @@
 				d.Timestamp = new Date(d.Timestamp);
 			});
 
+
+
 			var ndx = crossfilter(data);
 			var all = ndx.groupAll();
 
-			var bodyTypeDim = ndx.dimension(function (d) { return d["body-type"]; });
-			var yearDim = ndx.dimension(function (d) { return d["year"]; });
+      var headDim = ndx.dimension(function (d) { return d["month"]; });
+      var bodyTypeDim = ndx.dimension(function (d) { return d["body-type"]; });
+      var yearDim = ndx.dimension(function (d) { return d["year"]; });
 			var dateDim = ndx.dimension(function (d) { return d.Timestamp; });
 
 			var bodyTypeGroup = bodyTypeDim.group();
